@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('rent_logs', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('phone')->nullable();
-            $table->text('address');
-            $table->enum('status',['inactive','active'])->default('inactive');
-            
+            $table->foreignId('book_id');
+            $table->foreignId('user_id');
+            $table->date("rent_date");
+            $table->date("return_date");
+            $table->date("actual_return_date")->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('rent_logs');
     }
 };
