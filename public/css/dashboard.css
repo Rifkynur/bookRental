@@ -1,0 +1,25 @@
+.card {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: white;
+    padding-block: 20px;
+}
+.icon {
+    font-size: 60px;
+}
+.card-desc {
+    text-align: right;
+}
+.card.books {
+    background-color: darkcyan;
+}
+.card.categories {
+    background-color: darkred;
+}
+.card.users {
+    background-color: darkgoldenrod;
+}
