@@ -8,7 +8,7 @@
             <a href="/books" class="{{ request()->route()->uri === "books" ? "active" : "" }}">Books</a>
         </li>
         <li >
-            <a href="/categories" class="{{ request()->route()->uri === "categories" ? "active" : "" }}">Categories</a>
+            <a href="/categories" class="{{ str_contains(request()->path(), 'categories') ? 'active' : '' }}"">Categories</a>
         </li>
         <li>
             <a href="/users" class="{{ request()->route()->uri === "users" ? "active" : "" }}">Users</a>
